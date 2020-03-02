@@ -1,0 +1,18 @@
+<section class="header">
+    <h1 class="header_title" routerLink="">Demo</h1>
+    <img src="../../assets/icons/hamburger.svg" alt="" class="header_mobile" (click)="toggleMobileMenu()">
+    <div class="header_navigation">
+        <ul>
+            <li><a routerLink="">Forums</a></li>
+        </ul>
+    </div>
+</section>
+
+<section class="menu" [class.menu_open]="mobileMenu">
+    <div class="menu_target" (click)="toggleMobileMenu()"></div>
+    <div class="menu_items">
+        <ul>
+            <li><a routerLink="">Forums</a></li>
+        </ul>
+    </div>
+</section>

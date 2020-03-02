@@ -1,0 +1,107 @@
+@import '../../scss/common.scss';
+
+.post {
+    height: 100%;
+    width: 100vw;
+    position: relative;
+    padding: $mPadding;
+    transition: width 0.1s linear;
+
+    @include breakpoint(801px) {
+        width: 60vw;
+        margin: 0 20vw;
+    }
+
+    &_container {
+        height: calc(100% - 24px);
+        overflow: auto;
+    }
+
+    &_main {
+        margin: 0 $sPadding $mPadding $sPadding;
+        box-shadow: 0px 1px 7px rgba($color: $black, $alpha: 0.3);
+        ;
+    }
+
+    &_breadcrumb {
+        background: none;
+        border: none;
+        margin-bottom: $mPadding;
+
+        >a {
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+
+    &_header {
+        padding: $sPadding;
+        background: $blue;
+        border-top-left-radius: $defaultRadius;
+        border-top-right-radius: $defaultRadius;
+    }
+
+    &_content {
+        padding: $sPadding;
+        width: 100%;
+        border: 1px solid $blue;
+        border-bottom-left-radius: $defaultRadius;
+        border-bottom-right-radius: $defaultRadius;
+        position: relative;
+
+        >p::first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    &_comments {
+        margin: $sPadding;
+
+        &_title {
+            margin: $mPadding 0 $sPadding 0;
+        }
+    }
+}
+
+.comment {
+    border: 1px solid $blue;
+    margin-bottom: $sPadding;
+    margin: 1px $sPadding $mPadding $sPadding;
+    box-shadow: 0px 1px 7px rgba($color: $black, $alpha: 0.3);
+    ;
+
+    &_header {
+        padding: $sPadding;
+        border-top-left-radius: $defaultRadius;
+        border-top-right-radius: $defaultRadius;
+        background: $blue;
+
+        >p {
+            color: $grey;
+        }
+    }
+
+    &_content {
+        padding: $sPadding;
+
+        >p::first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    &_user {
+        display: flex;
+        align-items: center;
+
+        >span::first-letter {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.material-icons {
+    font-size: 20px;
+    margin-right: $sPadding;
+    color: $grey;
+}

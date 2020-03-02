@@ -1,0 +1,10 @@
+@import './colours.scss';
+@import './paddings.scss';
+@import './animations.scss';
+@import './borderRadius.scss';
+
+@mixin breakpoint($width) {
+    @media (min-width:#{$width}) {
+        @content;
+    }
+}

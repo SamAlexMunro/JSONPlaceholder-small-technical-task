@@ -1,0 +1,27 @@
+<section class="post">
+    <button class="post_breadcrumb"><a routerLink="">General</a></button>
+    <div class="post_widget">
+        <div class="post_header">
+            Create new post
+        </div>
+        <form class="post_body" action="" [formGroup]="newPostForm" (ngSubmit)="onSubmit(newPostForm.value)">
+            <label for="Title">Title *</label>
+            <input type="text" id="title" formControlName="title"
+                [class.error]="title.invalid && (title.dirty || title.touched) && title.errors.required">
+            <label for="" class="post_error"
+                *ngIf="title.invalid && (title.dirty || title.touched) && title.errors.required">Title Required</label>
+            <label for="body">Message *</label>
+            <input type="text" id="body" formControlName="body"
+                [class.error]="body.invalid && (body.dirty || body.touched) && body.errors.required">
+            <label for="" class="post_error"
+                *ngIf="body.invalid && (body.dirty || body.touched) && body.errors.required">Message
+                Required</label>
+            <div class="post_cta">
+                <p class="post_success" *ngIf="showSuccessMessage">Succesfully Submitted Post</p>
+                <button class="post_clear" type="reset">Clear</button>
+                <button class="post_submit" type="submit" [disabled]="newPostForm.invalid"
+                    [class.disabled]="newPostForm.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>

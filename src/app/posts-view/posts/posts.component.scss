@@ -1,0 +1,113 @@
+@import '../../scss/common.scss';
+
+.posts {
+    height: 100%;
+    width: 100vw;
+    position: relative;
+    padding: $mPadding;
+    transition: width 0.1s linear;
+
+    @include breakpoint(801px) {
+        width: 60vw;
+        margin: 0 20vw;
+    }
+
+    &_toolbar {
+        display: flex;
+        padding-bottom: $mPadding;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &_list {
+        height: calc(100% - 24px);
+        overflow: auto;
+        width: 100%;
+        position: relative;
+    }
+
+    &_new {
+        padding: $sPadding;
+        border-radius: $defaultRadius;
+        background: $green;
+        border: none;
+    }
+
+    &_filter {
+        padding: $sPadding;
+        border-radius: $defaultRadius;
+        background: $white;
+        width: fit-content;
+        border: none;
+        margin-left: auto;
+        margin-right: $sPadding;
+    }
+}
+
+.post {
+    border-radius: $defaultRadius;
+    margin: 0 $sPadding $mPadding $sPadding;
+    position: relative;
+    border: 1px solid $blue;
+    overflow: visible !important;
+    box-shadow: 1px 1px 7px rgba($color: $black, $alpha: 0.3);
+    ;
+
+    &_header {
+        width: 100%;
+    }
+
+    &_meta {
+        margin-bottom: $sPadding;
+        padding: $sPadding;
+        background: $blue;
+        border-top-left-radius: $defaultRadius;
+        border-top-right-radius: $defaultRadius;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        >p {
+            color: $grey;
+        }
+    }
+
+    &_section {
+        display: flex;
+        align-items: center;
+    }
+
+    &_title {
+        width: 100%;
+        font-size: 14px;
+        display: inline-block;
+        word-break: break-all;
+        padding: 0 $sPadding;
+
+        >p::first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    &_content {
+        padding: $sPadding;
+        width: 100%;
+
+        &_message {
+            width: 90%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.material-icons {
+    font-size: 20px;
+    margin-right: $sPadding;
+    color: $grey;
+}

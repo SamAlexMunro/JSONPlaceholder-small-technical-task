@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import './app/scss/common.scss';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    box-sizing: border-box;
+    color: $black;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 18px;
+    &::first-letter{
+        text-transform: uppercase;
+    }
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 16px;
+    &::first-letter{
+        text-transform: uppercase;
+    }
+}
+
+h3 {
+    font-weight: unset;
+    font-size: 16px;
+    &::first-letter{
+        text-transform: uppercase;
+    }
+}
+
+
+button{
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 1.5px solid rgba(0, 0, 0, 0);
+    border-radius: 6px;
+    background-clip: padding-box;
+    background-color: $black;
+}

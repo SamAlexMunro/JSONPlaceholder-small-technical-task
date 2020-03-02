@@ -1,0 +1,105 @@
+@import '../../scss/common.scss';
+
+.post {
+    height: 100%;
+    width: 100vw;
+    position: relative;
+    padding: $mPadding;
+    transition: width 0.1s linear;
+
+    @include breakpoint(801px) {
+        width: 60vw;
+        margin: 0 20vw;
+    }
+
+    &_breadcrumb {
+        background: none;
+        border: none;
+        margin-bottom: $mPadding;
+
+        >a {
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+
+    &_widget {
+        border-radius: $defaultRadius;
+        margin-bottom: $mPadding;
+        position: relative;
+        border: 1px solid $blue;
+        margin: 1px $sPadding $mPadding $sPadding;
+        box-shadow: 0px 1px 7px rgba($color: $black, $alpha: 0.3);
+        ;
+    }
+
+    &_header {
+        margin-bottom: $sPadding;
+        padding: $sPadding;
+        background: $blue;
+        border-top-left-radius: $defaultRadius;
+        border-top-right-radius: $defaultRadius;
+    }
+
+    &_body {
+        display: flex;
+        flex-direction: column;
+        padding: $sPadding;
+    }
+
+    &_error {
+        color: $red;
+    }
+
+    &_submit {
+        padding: $sPadding;
+        border-radius: $defaultRadius;
+        background: $green;
+        border: none;
+    }
+
+    &_clear {
+        padding: $sPadding;
+        border-radius: $defaultRadius;
+        background: $whiteBck;
+        border: none;
+        margin-right: $sPadding;
+    }
+
+    &_cta {
+        margin-top: $sPadding;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &_success {
+        margin-right: auto;
+        color: $darkGreen;
+    }
+}
+
+.error {
+    border-color: $red;
+}
+
+.disabled {
+    background: $grey;
+    cursor: not-allowed;
+}
+
+input {
+    border-radius: $defaultRadius;
+    border: 1px solid $grey;
+    padding: $sPadding;
+}
+
+label {
+    margin: $sPadding 0;
+    color: $grey;
+
+    &:first-child {
+        margin: 0 0 $sPadding 0;
+    }
+}

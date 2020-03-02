@@ -1,0 +1,31 @@
+<section class="posts">
+    <div class="lds-dual-ring" *ngIf="loading"></div>
+    <div class="posts_toolbar">
+        <h2 class="posts_title">General</h2>
+        <select class="posts_filter" id="filterValue" (change)="filterResults($event.target.value)">
+            <option value="" disabled selected>Filter Users</option>
+            <option [value]="'all'">All Users</option>
+            <option *ngFor="let user of users" [value]="user?.id">{{user?.username}}</option>
+        </select>
+        <button class="posts_new" routerLink="newPost">New Post</button>
+    </div>
+    <div class="posts_list">
+        <div class="post" *ngFor="let post of postData" (click)="navigateToDetailedPost(post?.id)">
+            <div class="post_header">
+                <div class="post_meta">
+                    <p class="post_section">
+                        <i class="material-icons">person</i>
+                        <span>{{getUserName(post.userId)?.username}}</span>
+                    </p>
+                </div>
+                <div class="post_title">
+                    <p>{{post?.title}}</p>
+                </div>
+            </div>
+            <div class="post_content">
+                <p class="post_content_message">{{post?.body}}</p>
+                <div class="post_content_hidden"></div>
+            </div>
+        </div>
+    </div>
+</section>
